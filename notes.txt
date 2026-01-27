@@ -1,6 +1,6 @@
 How to build it:
 
-docker buildx build --builder cloud-dmusicant-mybuilder --platform linux/amd64,linux/arm64 --tag dmusicant/cs348-images:2025-05-12 --push .
+docker buildx build --builder cloud-dmusicant-mybuilder --platform linux/amd64,linux/arm64 --tag dmusicant/cs334-images:2025-05-12 --push .
 
 
 Notes on how to make the initial database, from the docker container, via user ubuntu:
