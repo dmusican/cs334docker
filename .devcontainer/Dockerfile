@@ -30,5 +30,6 @@ RUN echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.
 RUN apt update && apt install -y  mongodb-org
 # in order for mongodb to start, we must first create a mongodb data directory
 RUN mkdir -p /data/db
+RUN echo 'ALL ALL = (ALL) NOPASSWD: ALL' > /etc/sudoers
 # RUN useradd -m csuser && echo "csuser:csuser" | chpasswd && adduser csuser sudo
 USER ubuntu
