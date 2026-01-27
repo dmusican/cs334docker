@@ -1,3 +1,13 @@
 How to build it:
 
 docker buildx build --builder cloud-dmusicant-mybuilder --platform linux/amd64,linux/arm64 --tag dmusicant/cs348-images:2025-05-12 --push .
+
+
+Notes on how to make the initial database, from the docker container, via user ubuntu:
+
+sudo -u postgres psql -c "create user ubuntu"
+sudo -u postgres psql -c "create database ubuntu with owner='ubuntu'"
+psql
+create table example (x int);
+insert into example values (3);
+...
