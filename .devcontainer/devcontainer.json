@@ -4,8 +4,6 @@
     },
     "runArgs": [
         "--shm-size=2gb" // std 64mb (!) are not enough
-        // "--cpus=4",
-        // "-m 4gb"
     ],
     "settings": {
         "terminal.integrated.profiles.linux": {
@@ -19,15 +17,5 @@
         "terminal.integrated.defaultProfile.linux": "bash (login)"
     },
     "extensions": [
-        "donjayamanne.git-extension-pack",
-        "mhutchie.git-graph",
-        "ms-python.python",
-        "ms-vscode.cpptools",
-        "ms-vscode.cpptools-extension-pack",
-        "ms-vscode.cpptools-themes"
     ],
-    "mounts": [
-	// "source=./postgresql,target=/var/lib/postgresql,type=bind,consistency=cached",
-// 	"source=${localEnv:HOME}${localEnv:USERPROFILE}/CS334DatabaseSystems/postgresql,target=/var/lib/postgresql,type=bind,consistency=cached",
-    ]
 }
