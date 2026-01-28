@@ -1,0 +1,1 @@
+zip -r cs334.zip cs334/postgresql cs334/README.md cs334/setupAndStartPostgresql.bash cs334/.devcontainer/Dockerfile cs334/.devcontainer/devcontainer.json
