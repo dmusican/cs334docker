@@ -5,9 +5,20 @@ docker buildx build --builder cloud-dmusicant-mybuilder --platform linux/amd64,l
 
 Notes on how to make the initial database, from the docker container, via user ubuntu:
 
+First, start container, but don't run setupAndStartPostgresql. Need to create it in the original location.
+
+Delete the local copy of the database, if there is one.
+
+sudo -u postgres /usr/lib/postgresql/16/bin/pg_ctl start -D /etc/postgresql/16/main
 sudo -u postgres psql -c "create user ubuntu"
 sudo -u postgres psql -c "create database ubuntu with owner='ubuntu'"
 psql
 create table example (x int);
 insert into example values (3);
 ...
+
+sudo -u postgres /usr/lib/postgresql/16/bin/pg_ctl stop -D /etc/postgresql/16/main
+
+Then copy it over to devcontainer home
+
+sudo cp -r /var/lib/postgresql .
