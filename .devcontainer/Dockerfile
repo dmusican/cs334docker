@@ -13,15 +13,14 @@ RUN apt-get install -y rsync
 RUN apt-get install -y vim
 RUN apt-get install -y zip
 RUN apt-get install -y git
-RUN apt-get install -y default-jdk
 RUN apt-get install -y python3
 RUN apt-get install -y python3-pip
 RUN apt-get install -y libpq-dev python3-dev
 RUN apt-get install -y build-essential libssl-dev libffi-dev python3-dev
 RUN apt-get install -y python3-psycopg
-# RUN pip3 install psycopg2
 RUN apt-get update
-# next 4 lines install mongodb 6.0
+
+# install mongodb
 RUN apt-get install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates lsb-release
 RUN curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
@@ -30,6 +29,6 @@ RUN echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.
 RUN apt update && apt install -y  mongodb-org
 # in order for mongodb to start, we must first create a mongodb data directory
 RUN mkdir -p /data/db
+
 RUN echo 'ALL ALL = (ALL) NOPASSWD: ALL' > /etc/sudoers
-# RUN useradd -m csuser && echo "csuser:csuser" | chpasswd && adduser csuser sudo
 USER ubuntu
